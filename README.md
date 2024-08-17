@@ -1,9 +1,10 @@
 # TecWeb
-Matricula: 202148788
-Nombre: Joctan Maceda Hernandez
-Materia: Desarrollo de Aplicaciones Web
-Periodo: 2024 Otoño
+Matricula: 202148788'\n'
+Nombre: Joctan Maceda Hernandez'\n'
+Materia: Desarrollo de Aplicaciones Web'\n'
+Periodo: 2024 Otoño'\n''\n'
 
-##Descripcion:
-Este repositorio tiene como objetivo almacenar y entregar todos las practicas y proyectos del curso =).
+#Descripcion:'\n'
+Este repositorio tiene como objetivo almacenar'\n' 
+y entregar todos las practicas y proyectos del curso =).
 
