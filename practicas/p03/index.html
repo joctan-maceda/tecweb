@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Familia de Letras */
+            line-height: 1.6; /*  Interlineado */ 
+            margin: 0; /* Margen fuera */
+            padding: 20px; /* Margen dentro */
+            background-color: #f4f4f4; /* Color de la pagina */ 
+            color: #333; /* Color de la letra */
+        }
+
+        /* Estilo para el encabezado principal */
+        h1 {
+            color: #2c3e50; /* Color de la letra */
+            font-size: 2em; 
+            margin-bottom: 20px;
+            text-align: center; /* Texto centrado */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ////////////////////////////// EJERCICIO 1 /////////////////////////////-->
+    <!-- Encabezado principal para el título de la receta -->
+<h1>Guacamole (clásico)</h1>
+
+<!-- Párrafo de introducción que describe el guacamole -->
+<p>Existe un condimento que no puede faltar en toda mesa mexicana. Algunos lo consideran una salsa, 
+    otros un aderezo, algunos incluso le llaman ensalada, otros simplemente le llaman por su nombre 
+    propio: Guacamole.</p>
+
+<p>Aunque el guacamole se prepara de diferentes formas según la zona de la que provenga la receta, 
+    la base suele ser la misma. Aquí te mostramos una receta muy completa para preparar esta conocida 
+    salsa mexicana:</p>
+
+<!-- Encabezado de segundo nivel para la sección de ingredientes -->
+<h2>Ingredientes</h2>
+
+<!-- Lista desordenada para los ingredientes de la receta -->
+<ul>
+    <li>4 o 5 aguacates maduros</li>
+    <li>1 cebolla mediana (normal)</li>
+    <li>1 tomate mediano</li>
+    <li>1 chile serrano (o un jalapeño en conserva)</li>
+    <li>Zumo de 1/2 lima o limón</li>
+    <li>1 manojo de cilantro fresco</li>
+    <li>Sal</li>
+</ul>
+
+<!-- Encabezado de segundo nivel para la sección de instrucciones -->
+<h2>Instrucciones</h2>
+
+<!-- Lista ordenada para los pasos de la preparación -->
+<ol>
+    <li>Lavar bien el tomate y el manojo de cilantro.</li>
+    <li>Pelar la cebolla y quitarle la capa exterior.</li>
+    <li>Trocear la cebolla y el tomate en trozos muy pequeños.</li>
+    <li>Picar las hojas de cilantro lo más fino posible, desechando los tallos.</li>
+    <li>Poner todos los ingredientes en un recipiente, preferentemente un molcajete.</li>
+    <li>Cortar por la mitad los aguacates, retirando el hueso.</li>
+    <li>Sacar toda la pulpa posible de los aguacates y ponerla en el molcajete.</li>
+    <li>Añadir el zumo de 1/2 lima con una pizca de sal.</li>
+    <li>Añadir un chile serrano muy bien picadito.</li>
+    <li>Machacar todos los ingredientes en el molcajete.</li>
+    <li>En caso de no contar con un molcajete, se puede utilizar un tenedor, procurando que la 
+        pulpa del aguacate se mezcle con los demás ingredientes. Debe quedarnos un guacamole con 
+        los trozos visibles, pero opcionalmente puede pasarse por la batidora para dejarlo más 
+        cremoso y con una textura más uniforme.</li>
+</ol>
+
+<!-- Créditos o información adicional -->
+<small>Desarrollo de Aplicaciones Web<br>JCCR ®</small>
+
+<!-- ////////////////////////////// EJERCICIO 2 /////////////////////////////-->
+    <article>
+        <header>
+            <!-- El elemento <p> se utiliza para contener el texto de la publicación, y el elemento <time>
+                 se usa para identificar la fecha de publicación de manera semántica y reconocible por cualquier navegador. -->
+            <p>publicado por MasterChef, <time datetime="2018-11-15">November 15, 2018</time></p>
+        </header>
+         
+
+        <!-- Ponemos un titulo de segundo grado en cursiva -->
+        <h2><i>Bajito y Despacito</i></h2> 
+        
+        <!-- dfn nos ayuda a definir un elemento especial -->
+        <p>Esta semana estamos <em>extremadamente</em> emocionados por presentar una nueva técnica de cocina llamada 
+        <dfn>sous vide</dfn>. Con la técnica <dfn>sous vide</dfn>, tú sumerges un recipiente (generalmente de plástico 
+        sellado al vacío) 
+        en un baño de agua que precisamente se adapta a la temperatura requerida para que la comida sea cocinada. 
+        En este programa, 
+        <cite>Cocina para Geeks</cite>, Jaime Potter describe la técnica como <q>poción mágica a temperatura ultra 
+            baja</q>.</p>
+        
+        <p>La siguiente semana, prepararemos <i>Salmon Sous Vide con Eneldo Holandés</i>. Para asistir al programa, 
+            contáctanos antes del 30 de Noviembre.</p>
+        
+        <p>registro@masterchef.com<br>
+        552-336-1800</p>
+        
+        <!-- El elemento <small> se usa para advertencias o notas adicionales, a menudo con un tamaño de letra reducido 
+            para indicar menor importancia relativa. -->
+        <p><small>Advertencia: El salmón cocinado a la <i><dfn>sous vide</dfn> </i>no está pasteurizado. <strong>Evitarlo</strong> 
+            si se está embarazada o se tiene problemas de alergia e inmunidad.</small></p>
+    </article>
+    <!-- 
+    <article>:
+        Representa un contenido independiente y completo que podría ser distribuido de manera autónoma, como un artículo, entrada de blog o publicación en una página web.
+        
+    <header>:
+        Se usa para agrupar el contenido de encabezado de un artículo o sección, como títulos, subtítulos, fechas de publicación, etc.
+        
+    <p>:
+        Define un párrafo. Se utiliza para agrupar texto dentro de un bloque con su propio espacio.
+        
+    <time>:
+        Marca una fecha u hora en el contenido. El atributo datetime especifica el valor en un formato estandarizado que los navegadores y motores de búsqueda pueden interpretar. Aquí se usa para mostrar la fecha de publicación.
+        
+    <h2>:
+        Define un encabezado de nivel 2. Se usa para marcar los títulos o subtítulos principales dentro del artículo.
+        
+    <i>:
+        Aplica un estilo en cursiva al texto. Aunque tradicionalmente se usa para marcar texto que se debe resaltar de esta manera, también se usa para nombres de obras o frases que requieren distinción.
+        
+    <em>:
+        Marca el texto con énfasis, lo que generalmente se refleja en cursiva. Semánticamente, indica que la palabra o frase es importante en el contexto del contenido.
+       
+    <dfn>:
+        Marca un término que está siendo definido. Aquí se usa para destacar el término "sous vide" como una técnica específica que se introduce en el texto.
+        
+    <cite>:
+        Se utiliza para citar títulos de obras (como libros, programas, artículos, etc.). En este caso, se cita el programa "Cocina para Geeks".
+        
+    <q>:
+        Representa una cita corta o en línea. El texto dentro de <q> generalmente aparece entre comillas en la presentación visual.
+        
+    <br>:
+        Introduce un salto de línea. Se usa en casos donde el contenido necesita continuar en la siguiente línea, como en direcciones o datos de contacto.
+        
+    <small>:
+        Aplica un estilo de texto más pequeño, frecuentemente usado para notas, advertencias, aclaraciones o detalles adicionales. Aquí se usa para mostrar la advertencia de salud sobre el consumo de salmón sous vide.
+    
+    <strong>:
+        Aplica un estilo en negrita al texto. Semánticamente, indica que el texto es de especial importancia o necesita destacarse, como en el caso de una advertencia.
+    -->
+</body>
+</html>
