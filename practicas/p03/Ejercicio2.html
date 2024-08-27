@@ -4,128 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
-                /* Estilo general para la página */
+        /* Estilo general para la página */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Verdana', sans-serif;
+            background-color: #f9f9f9;
+            color: #4a4a4a;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Estilo para el encabezado principal */
-        h1 {
-            color: #2c3e50;
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        /* Estilo para los encabezados de secciones */
-        h2 {
-            color: #16a085;
-            font-size: 1.5em;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        /* Estilo para los párrafos */
-        p {
-            margin-bottom: 15px;
-        }
-
-        /* Estilo para las listas desordenadas (ingredientes) */
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
-        }
-
-        /* Estilo para las listas ordenadas (instrucciones) */
-        ol {
-            margin-left: 20px;
-        }
-
-        /* Estilo para los elementos de la lista */
-        li {
-            margin-bottom: 8px;
-        }
-
-        /* Estilo para los créditos */
-        small {
-            display: block;
-            margin-top: 30px;
-            text-align: center;
-            color: #7f8c8d;
-        }
-
-        /* Estilo para enlaces, en caso de que los uses */
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Estilo para el contenedor principal */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
         }
 
     </style>
 </head>
 <body>
-        <!-- Encabezado principal para el título de la receta -->
-    <h1>Guacamole (clásico)</h1>
-
-    <!-- Párrafo de introducción que describe el guacamole -->
-    <p>Existe un condimento que no puede faltar en toda mesa mexicana. Algunos lo consideran una salsa, otros un aderezo, algunos incluso le llaman ensalada, otros simplemente le llaman por su nombre propio: Guacamole.</p>
-
-    <p>Aunque el guacamole se prepara de diferentes formas según la zona de la que provenga la receta, la base suele ser la misma. Aquí te mostramos una receta muy completa para preparar esta conocida salsa mexicana:</p>
-
-    <!-- Encabezado de segundo nivel para la sección de ingredientes -->
-    <h2>Ingredientes</h2>
-
-    <!-- Lista desordenada para los ingredientes de la receta -->
-    <ul>
-        <li>4 o 5 aguacates maduros</li>
-        <li>1 cebolla mediana (normal)</li>
-        <li>1 tomate mediano</li>
-        <li>1 chile serrano (o un jalapeño en conserva)</li>
-        <li>Zumo de 1/2 lima o limón</li>
-        <li>1 manojo de cilantro fresco</li>
-        <li>Sal</li>
-    </ul>
-
-    <!-- Encabezado de segundo nivel para la sección de instrucciones -->
-    <h2>Instrucciones</h2>
-
-    <!-- Lista ordenada para los pasos de la preparación -->
-    <ol>
-        <li>Lavar bien el tomate y el manojo de cilantro.</li>
-        <li>Pelar la cebolla y quitarle la capa exterior.</li>
-        <li>Trocear la cebolla y el tomate en trozos muy pequeños.</li>
-        <li>Picar las hojas de cilantro lo más fino posible, desechando los tallos.</li>
-        <li>Poner todos los ingredientes en un recipiente, preferentemente un molcajete.</li>
-        <li>Cortar por la mitad los aguacates, retirando el hueso.</li>
-        <li>Sacar toda la pulpa posible de los aguacates y ponerla en el molcajete.</li>
-        <li>Añadir el zumo de 1/2 lima con una pizca de sal.</li>
-        <li>Añadir un chile serrano muy bien picadito.</li>
-        <li>Machacar todos los ingredientes en el molcajete.</li>
-        <li>En caso de no contar con un molcajete, se puede utilizar un tenedor, procurando que la pulpa del aguacate se mezcle con los demás ingredientes. Debe quedarnos un guacamole con los trozos visibles, pero opcionalmente puede pasarse por la batidora para dejarlo más cremoso y con una textura más uniforme.</li>
-    </ol>
-
-    <!-- Créditos o información adicional -->
-    <small>Desarrollo de Aplicaciones Web<br>JCCR ®</small>
-
+    <article>
+        <header>
+            <!-- El elemento <p> se utiliza para contener el texto de la publicación, y el elemento <time> se usa para identificar la fecha de publicación de manera semántica y reconocible por cualquier navegador. -->
+            <p>publicado por MasterChef, <time datetime="2018-11-15">November 15, 2018</time></p>
+        </header>
+        
+        <h2><i>Bajito y Despacito</i></h2>
+        
+        <p>Esta semana estamos <em>extremadamente</em> emocionados por presentar una nueva técnica de cocina llamada 
+        <dfn>sous vide</dfn>. Con la técnica <dfn>sous vide</dfn>, tú sumerges un recipiente (generalmente de plástico 
+        sellado al vacío) 
+        en un baño de agua que precisamente se adapta a la temperatura requerida para que la comida sea cocinada. 
+        En este programa, 
+        <cite>Cocina para Geeks</cite>, Jaime Potter describe la técnica como <q>poción mágica a temperatura ultra 
+            baja</q>.</p>
+        
+        <p>La siguiente semana, prepararemos <i>Salmon Sous Vide con Eneldo Holandés</i>. Para asistir al programa, 
+            contáctanos antes del 30 de Noviembre.</p>
+        
+        <p>registro@masterchef.com<br>
+        552-336-1800</p>
+        
+        <!-- El elemento <small> se usa para advertencias o notas adicionales, a menudo con un tamaño de letra reducido para indicar menor importancia relativa. -->
+        <p><small>Advertencia: El salmón cocinado a la <dfn>sous vide</dfn> no está pasteurizado. <strong>Evitarlo</strong> 
+            si se está embarazada o se tiene problemas de alergia e inmunidad.</small></p>
+    </article>
+    
 </body>
 </html>
