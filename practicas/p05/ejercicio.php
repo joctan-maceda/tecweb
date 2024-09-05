@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejericios</title>
+    <title>Ejercicios</title>
 </head>
 <body>
-    <H1>Respuesta a los ejercicios de la practica</H1>
+    <h1>Respuesta a los ejercicios de la práctica</h1>
+
     <h2>Ejercicio 1</h2>
     <?php
         echo 'Variables válidas: $_myvar, $_7var, $myvar, $var7, $_element1'."<br>";
@@ -14,7 +15,7 @@
         echo 'Las variables necesitan empezar con $ seguidas por un guion bajo (_) o letra, sin caracteres especiales como *'."<br>";
     ?>
 
-    <h2>Ejericio 2</h2>
+    <h2>Ejercicio 2</h2>
     <?php
         $a = "ManejadorSQL";  
         $b = 'MySQL';  
@@ -28,7 +29,7 @@
 
         // Imprimir los valores de las variables actualizados
         echo '$a: ' . $a . ' $b: ' . $b . ' $c: ' . $c . "<br>";
-        echo 'Al hacer que las vairables $b y $c referencien a $a el contenido de a se copio en las demas variabels'."<br>";
+        echo 'Al hacer que las variables $b y $c referencien a $a, el contenido de $a se copió en las demás variables'."<br>";
 
         unset($a, $b, $c);
     ?>
@@ -38,9 +39,11 @@
         $a = "PHP5";
         $z[] = &$a;
         $b = "5a version de PHP";
-        $c = $b * 10;
-        $a .= $b;
-        $b *= $c;
+        $c = $b * 10;  // Multiplicación de un string por un número
+
+        $a .= $b;  // Concatenación
+        $b *= $c;  // Multiplicación
+
         $z[0] = "MySQL";
 
         echo "Valores de las variables:<br>";
@@ -55,8 +58,8 @@
 
         unset($a, $b, $c, $z);
     ?>
-    <h2>Ejercicio 4</h2>
 
+    <h2>Ejercicio 4</h2>
     <?php
         $a = "PHP5";
         $z[] = &$a;
@@ -64,19 +67,20 @@
         $c = $b * 10;
 
         echo "Valores usando \$GLOBALS:<br>";
-        echo "\$a = " . $GLOBALS['a'] . "<br>";
-        echo "\$b = " . $GLOBALS['b'] . "<br>";
-        echo "\$c = " . $GLOBALS['c'] . "<br>";
+        // Acceso a variables globales (aunque no están en el ámbito global en este caso)
+        echo "\$a = " . (isset($GLOBALS['a']) ? $GLOBALS['a'] : 'No definida') . "<br>";
+        echo "\$b = " . (isset($GLOBALS['b']) ? $GLOBALS['b'] : 'No definida') . "<br>";
+        echo "\$c = " . (isset($GLOBALS['c']) ? $GLOBALS['c'] : 'No definida') . "<br>";
 
         unset($a, $b, $c, $z);
     ?>
-    <h2>Ejercicio 5</h2>
 
+    <h2>Ejercicio 5</h2>
     <?php
         $a = "7 personas";
-        $b = (integer) $a;
-        $a = "9E3";
-        $c = (double) $a;
+        $b = (integer) $a;  // Conversión a entero
+        $a = "9E3";  // Notación científica
+        $c = (double) $a;  // Conversión a doble
 
         echo "Valores después de las conversiones:<br>";
         echo "\$a = $a<br>";
@@ -87,7 +91,6 @@
     ?>
 
     <h2>Ejercicio 6</h2>
-
     <?php
         $a = "0";
         $b = "TRUE";
@@ -106,8 +109,8 @@
 
         unset($a, $b, $c, $d, $e, $f);  
     ?>
-    
-    <h2>Ejericio 7</h2>
+
+    <h2>Ejercicio 7</h2>
     <?php
         echo "Versión de Apache y PHP: " . $_SERVER['SERVER_SOFTWARE'] . "<br>";
         echo "Sistema operativo del servidor: " . PHP_OS . "<br>";
