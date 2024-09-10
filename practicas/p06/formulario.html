@@ -1,58 +1,66 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
+    <meta charset="utf-8">
     <title>Registro al Concurso</title>
-    <style type="text/css">
-        ol, ul { 
-      list-style-type: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
+    <form action="concurso.php" method="POST">
+      <h1>Registro al Concurso &ldquo;Chidos mis Tenis&rdquo;</h1>
+      <p>¿Quieres cambiar tus viejos tenis por un par personalizado de Tenis Mike&#174;?<br><br>Justifica el por qué tus tenis se <em>tienen que</em> ir y tú puedes ser uno de los diez afortunados ganadores.</p>
+      
+      <fieldset><legend>Información del Participante</legend>
+        <ul>
+          <li>Nombre: <input type="text" name="name" required></li>
+          <li>Dirección de E-mail: <input type="email" name="email" required></li>
+          <li>Número Telefónico: <input type="tel" name="telefono" required></li>
+          <li>Mis tenis son tan feos porque...<br>
+            <textarea name="razon" rows="4" cols="60" maxlength="300" placeholder="Maximo 300 caracteres" required></textarea>
+          </li>
+        </ul>
+      </fieldset>
+      
 
-    <h1>Registro al Concurso &ldquo;Chidos mis Tenis&rdquo;</h1>
-
-    <p>¿Quieres cambiar tus viejos tenis por un par personalizado de Tenis Mike&#174;?<br><br>Justifica el por qué tus tenis se <em>tienen que</em> ir y tú puedes ser uno de los diez afortunados ganadores.</p>
-
-    <p>Información del Participante</p>
-
-    <ul>
-    <li>Nombre: <input type="text" name="name"></li>
-    <li>Dirección de E-mail: <input type="text" name="email"></li>
-    <li>Número Telefónico: <input type="text" name="telefono"></li>
-    <li> Mis tenis son tan feos porque...<br>
-      <textarea name="..." rows="4" cols="60" maxlength="..."
-      placeholder="..."></textarea></li>
-    </ul>
-
-    <p><input type="submit">
-      <input type="reset"></p>
-      </form>
-
-    <h2>Diseña tus Mike personalizados:</h2>
-
-    <p>Diseño personalizado del Tenis</p>
-
-    <p>Color <em>(escoge uno)</em>:</p>
-      <ul>
-      <li>Rojo</li>
-      <li>Azul</li>
-      <li>Negro</li>
-      <li>Plateado</li>
-      </ul>
-
-    <p>Características <em>(escoge tantas como quieras)</em>:</p>
-      <ul>
-      <li>Cordones brillantes</li>
-      <li>Logo metálico</li>
-      <li>Suela luminosa</li>
-      <li>WiFi integrado</li>
-      </ul>
-
-    <p>Talla</p>
-    <p>Las medidas reflejan el estándar masculino:</p>
-
+      <h2>Diseña tus Mike personalizados:</h2>
+      <fieldset>
+        <legend>Diseño personalizado del Tenis</legend>
+        <legend>Color <em>(escoge uno)</em>:</legend>
+        <ul>
+          <li><input type="radio" name="color" value="red" required>Red</li>
+          <li><input type="radio" name="color" value="black">Black</li>
+          <li><input type="radio" name="color" value="blue">Blue</li>
+          <li><input type="radio" name="color" value="silver">Silver</li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>Características <em>(escoge tantas como quieras)</em>:</legend>
+        <ul>
+          <li><input type="checkbox" name="features[]" value="laces">Sparkley laces</li>
+          <li><input type="checkbox" name="features[]" value="logo">Metal logo</li>
+          <li><input type="checkbox" name="features[]" value="sole">Luminous sole</li>
+          <li><input type="checkbox" name="features[]" value="wifi">Built-in WiFi</li>
+        </ul>
+      </fieldset>
+      
+      <fieldset>
+        <legend>Talla</legend>
+        <p>Las medidas reflejan el estándar masculino:
+          <select name="tallas" required>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+          </select>
+        </p>
+      </fieldset>  
+      <p><input type="submit" value="Registrar"><input type="reset" value="Restablecer"></p>
+    </form>
   </body>
 </html>
