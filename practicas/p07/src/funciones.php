@@ -28,37 +28,71 @@ function ImprimirDatos(){
 /////////////////////// FUNCIONES DEL EJERCICIO 2 //////////////////
 
 function NumerosAleatorios(){
-    $matriz = [];
-    $condicion = [0,0,0];
-    $inicial = [1,0,1];
-    $bandera = 0;
-    for($i = 0; $bandera == 0; $i++){
-        for($j = 0; $j < 3; $j++){
-            $aleatorio = random_int(1, 500);
-            $matriz[$i][$j] = $aleatorio;
-            $condicion [$j]= $aleatorio % 2;
-            echo $aleatorio." ";
-        }
-        echo "<br>";
 
-        if($condicion == $inicial){
-            $bandera = 1;
-        }else{
-            $bandera = 0;
-        }
-        //imprimirMatriz($matriz); 
-    }
-    
-    
+    $contador = 0;
+    do {
+        
+        $aleatorio1 = random_int(1, 500);
+        $aleatorio2 = random_int(1, 500);
+        $aleatorio3 = random_int(1, 500);
+        echo "$aleatorio1, $aleatorio2, $aleatorio3 <br>";
+        $contador++;
+
+    } while (!(($aleatorio1 % 2 != 0) && ($aleatorio2 % 2 == 0) && ($aleatorio3 % 2 != 0))); // Repite mientras no cumpla con la condición
+
+    // Muestra el número de iteraciones realizadas
+    echo ($contador*3)." numero obtenidos en $contador iteraciones.";
+
 }
 
-function imprimirMatriz($matriz){
-    foreach ($matriz as $fila) {
-        foreach ($fila as $elemento) {
-            echo $elemento . " ";
-        }
-        echo "<br>";
-        echo "<br>";  // Salto de línea para separar las filas
+function Multiplo_While(){
+
+    $aleatorio1 = random_int(1, 100);
+    echo "Numeros anteriores: <br>";
+    while((($num = $_GET['numero']) % $aleatorio1) != 0){
+        $aleatorio1 = random_int(1, 100);
+        echo "$aleatorio1<br>";
     }
+    echo "Los numeros fueron: Aleatorio = $aleatorio1 , Obtenido por GET = $num";
+}
+
+function Multiplo_DoWhile(){
+    echo "Numeros anteriores: <br>";
+    do{
+        $aleatorio1 = random_int(1, 100);
+        echo "$aleatorio1<br>";
+    }while((($num = $_GET['numero']) % $aleatorio1) != 0);
+    echo "Los numeros fueron: Aleatorio = $aleatorio1 , Obtenido por GET = $num";
+}
+
+function Ejercicio_4(){
+    
+    for($i = 97; $i<123 ; $i++){
+        $arreglo[$i] = chr($i);
+        
+    }
+
+    echo "<table>";
+    foreach ($arreglo as $key => $value){
+        echo "<tr>";
+        echo "<td>". htmlspecialchars($key)."</td>";  
+        echo "<td>". htmlspecialchars($value)."</td>";         
+        echo "</tr>";
+    }
+    echo "</table>";
+}
+
+function Ejercicio_5(){
+    if(isset($_POST["edad"]) && isset($_POST["sexo"]))
+        {
+            $edad = $_POST["edad"];
+            $sexo = $_POST["sexo"];
+            
+            if( $edad >= 18 && $edad <=35 && $sexo == 'femenino'){
+                echo "Bienvenida, usted esta en el rango permitido";
+            }else{
+                echo "ERRORRRRR!";
+            }
+        }
 }
 ?>
