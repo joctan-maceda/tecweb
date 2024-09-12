@@ -50,5 +50,18 @@
     <?php
         Ejercicio_5();
     ?>
+    <h2>Ejercicio 6</h2>
+    <form action="http://localhost/tecweb/practicas/p07/index.php" method="post">
+        Matricula: <input type="text" name="matricula"><br>
+        <input type="submit" value="Consultar Matrícula">
+    </form>
+
+    <form action="http://localhost/tecweb/practicas/p07/index.php" method="post">
+        <input type="hidden" name="mostrar_todos" value="true">
+        <input type="submit" value="Mostrar Todos los Registros">
+    </form>
+    <?php
+        Ejercicio_6($parqueVehicular);
+    ?>
 </body>
 </html>
