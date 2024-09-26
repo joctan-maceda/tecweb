@@ -142,3 +142,45 @@ function Sentenciaswitch(){
     default:document.write('debe ingresar un valor comprendido entre 1 y 5.');
     }
 }
+
+function Sentenciaswitch2(){
+    var col;
+    col = prompt('Ingresa el color con que quierar pintar el fondo de la ventana (rojo, verde, azul)' , '' );
+    switch (col) {
+    case 'rojo': document.bgColor='#ff0000';
+
+    break;
+
+    case 'verde': document.bgColor='#00ff00';
+
+    break;
+
+    case 'azul': document.bgColor='#0000ff';
+
+    break;
+
+    }
+}
+
+function SentenciaWhile(){
+    var x;
+    x=1;
+    while (x<=100) {
+    document.write(x);
+    document.write('<br>');
+    x=x+1;
+    }
+}
+
+function Acumulador(){
+    var x=1;
+    var suma=0;
+    var valor;
+    while (x<=5){
+    valor = prompt('Ingresa el valor:', '');
+    valor = parseInt(valor);
+    suma = suma+valor;
+    x = x+1;
+    }
+    document.write('La suma de los valores es '+suma+'<br>');
+}
