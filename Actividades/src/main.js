@@ -184,3 +184,30 @@ function Acumulador(){
     }
     document.write('La suma de los valores es '+suma+'<br>');
 }
+
+function SentenciaDowhile(){
+    var valor;
+    do{
+    valor = prompt('Ingresa un valor entre 0 y 999:', '');
+    valor = parseInt(valor);
+    document.write('El valor '+valor+' tiene ');
+    if (valor<10)
+    document.write('Tiene 1 dígitos')
+    else
+    if (valor<100) {
+    document.write('Tiene 2 dígitos');
+    }
+    else {
+    document.write('Tiene 3 dígitos');
+    }
+    document.write('<br>');
+    }while(valor!=0);
+}
+
+function SentenciaFor(){
+    var f;
+    for(f=1; f<=10; f++)
+    {
+    document.write(f+" ");
+    }
+}
