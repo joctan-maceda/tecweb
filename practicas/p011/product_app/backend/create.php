@@ -11,6 +11,25 @@
          * LA INSERCIÓN A LA BASE DE DATOS. COMO RESPUESTA REGRESA
          * UN MENSAJE DE ÉXITO O DE ERROR, SEGÚN SEA EL CASO.
          */
-        echo '[SERVIDOR] Nombre: '.$jsonOBJ->nombre;
+        $sql = "SELECT * FROM productos WHERE nombre = ? and eliminado = 0";
+        $stmt = $conexion->prepare($sql);
+        $stmt->bind_param("s", $jsonOBJ->nombre);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            echo "El producto ya existe. Por favor, introduce un producto diferente";
+        } else {
+            $sql = "INSERT INTO productos VALUES (null, '{$jsonOBJ->nombre}', '{$jsonOBJ->marca}', '{$jsonOBJ->modelo}', {$jsonOBJ->precio}, '{$jsonOBJ->detalles}', {$jsonOBJ->unidades}, '{$jsonOBJ->imagen}', '0')";
+            if ( $conexion->query($sql) ) 
+            {
+                echo 'Producto insertado con ID: '.$conexion->insert_id;
+            }
+            else
+            {
+                echo 'El Producto no pudo ser insertado =(';
+            }
+        }
     }
 ?>
+

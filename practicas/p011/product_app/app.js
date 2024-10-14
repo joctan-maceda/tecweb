@@ -1,8 +1,8 @@
 // JSON BASE A MOSTRAR EN FORMULARIO
 var baseJSON = {
-    "precio": 0.0,
+    "precio": 100.0,
     "unidades": 1,
-    "modelo": "XX-000",
+    "modelo": "aaa",
     "marca": "NA",
     "detalles": "NA",
     "imagen": "img/default.png"
@@ -114,7 +114,7 @@ function buscarProducto(e) {
 }
 
 
-// FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"
+// FUNCIÓN CALLBACK DE BOTÓN "Agregar Producto"/*
 function agregarProducto(e) {
     e.preventDefault();
 
@@ -129,16 +129,72 @@ function agregarProducto(e) {
 
     // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
     var client = getXMLHttpRequest();
+    
+
+    
+    let nombre = finalJSON["nombre"];
+    let modelo = finalJSON["modelo"];
+    let precio = finalJSON["precio"];
+    let detalles = finalJSON["detalles"];
+    let unidades = finalJSON["unidades"];
+    let imagen = finalJSON["imagen"];
+
+    // Validación del nombre (requerido y máximo 100 caracteres)
+    if (nombre === "" || nombre.length > 100) {
+        alert("El nombre del producto es requerido y debe tener 100 caracteres o menos.");
+        event.preventDefault();
+        return;
+    }
+    
+
+    // Validación del modelo (alfanumérico y máximo 25 caracteres)
+    if (!/^[a-zA-Z0-9]+$/.test(modelo) || modelo.length > 25) {
+        alert("El modelo es requerido, debe ser alfanumérico y tener 25 caracteres o menos.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validación del precio (mayor a 99.99)
+    if (isNaN(precio) || precio <= 99.99) {
+        alert("El precio es requerido y debe ser mayor a 99.99.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validación de los detalles (opcional, pero máximo 250 caracteres)
+    if (detalles.length > 250) {
+        alert("Los detalles no deben exceder los 250 caracteres.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validación de unidades (requerido y mayor o igual a 0)
+    if (isNaN(unidades) || unidades < 0) {
+        alert("Las unidades deben ser mayores o iguales a 0.");
+        event.preventDefault();
+        return;
+    }
+
+    // Validación de la imagen (opcional, usar imagen por defecto si no se proporciona)
+    if (imagen === "") {
+        document.getElementById('imagen').value = "/img/default.jpg"; // Imagen por defecto
+    }
+
     client.open('POST', './backend/create.php', true);
     client.setRequestHeader('Content-Type', "application/json;charset=UTF-8");
     client.onreadystatechange = function () {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
-            console.log(client.responseText);
+            if(client.responseText != "\r\n"){
+                alert(client.responseText);
+            }
         }
     };
     client.send(productoJsonString);
+    console.log(client.responseText);
+    console.log(finalJSON["unidades"]);
 }
+
 
 // SE CREA EL OBJETO DE CONEXIÓN COMPATIBLE CON EL NAVEGADOR
 function getXMLHttpRequest() {
@@ -165,6 +221,7 @@ function getXMLHttpRequest() {
     }
     return objetoAjax;
 }
+
 
 function init() {
     /**
