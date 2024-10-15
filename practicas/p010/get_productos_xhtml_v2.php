@@ -107,7 +107,7 @@
                     echo '<td class="row-data">' . htmlspecialchars($row['detalles'], ENT_QUOTES, 'UTF-8') . '</td>';
                     echo '<td class="row-data">' . htmlspecialchars($row['unidades'], ENT_QUOTES, 'UTF-8') . '</td>';
                     echo '<td class="row-data"><img src="' . htmlspecialchars($row['imagen'], ENT_QUOTES, 'UTF-8') . '" alt="' . htmlspecialchars($row['nombre'], ENT_QUOTES, 'UTF-8') . '" width="100" /></td>';
-                    echo '<td class="row-data"><input type="button" value="submit" onclick="show();" /></td>';
+                    echo '<td class="row-data"><input type="button" value="Edit" onclick="show();" /></td>';
                     echo '</tr>';
                 }
 

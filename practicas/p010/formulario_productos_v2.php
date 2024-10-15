@@ -114,7 +114,7 @@
 
             <div class="form-group">
                 <label for="unidades">Unidades disponibles:</label>
-                <input type="number" id="unidades" name="unidades" value="<?= !empty($_POST['unidades'])?$_POST['unidades']:$_GET['unidades'] ?>" required>
+                <input type="number" id="unidades" name="unidades" step="0.01" value="<?= !empty($_POST['unidades'])?$_POST['unidades']:$_GET['unidades'] ?>" required>
             </div>
 
             <div class="form-group">
