@@ -121,16 +121,21 @@ $(document).ready(function(){
     $('#product-form').submit(e => {
         e.preventDefault();
 
-        // SE CONVIERTE EL JSON DE STRING A OBJETO
-        let postData = JSON.parse( $('#description').val() );
-        // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
-        postData['nombre'] = $('#name').val();
-        postData['id'] = $('#productId').val();
+        let postData = {
+            nombre: $('#name').val(),
+            id: $('#productId').val(),
+            marca: $('#marca').val(),
+            modelo: $('#modelo').val(),
+            precio: $('#precio').val(),
+            detalles: $('#detalles').val(),
+            unidades: $('#unidades').val(),
+            imagen: $('#imagen').val()
+        };
 
-        /**
-         * AQUÍ DEBES AGREGAR LAS VALIDACIONES DE LOS DATOS EN EL JSON
-         * --> EN CASO DE NO HABER ERRORES, SE ENVIAR EL PRODUCTO A AGREGAR
-         **/
+        if (!validarFormulario(postData)) {
+            return;
+        }
+
 
         const url = edit === false ? './backend/product-add.php' : './backend/product-edit.php';
         
@@ -146,7 +151,12 @@ $(document).ready(function(){
                     `;
             // SE REINICIA EL FORMULARIO
             $('#name').val('');
-            $('#description').val(JsonString);
+            $('#marca').val('');
+            $('#modelo').val('');
+            $('#precio').val('');
+            $('#detalles').val('');
+            $('#unidades').val('');
+            $('#imagen').val('');
             // SE HACE VISIBLE LA BARRA DE ESTADO
             $('#product-result').show();
             // SE INSERTA LA PLANTILLA PARA LA BARRA DE ESTADO
@@ -180,17 +190,88 @@ $(document).ready(function(){
             // EL ID SE INSERTA EN UN CAMPO OCULTO PARA USARLO DESPUÉS PARA LA ACTUALIZACIÓN
             $('#productId').val(product.id);
             // SE ELIMINA nombre, eliminado E id PARA PODER MOSTRAR EL JSON EN EL <textarea>
-            delete(product.nombre);
-            delete(product.eliminado);
-            delete(product.id);
-            // SE CONVIERTE EL OBJETO JSON EN STRING
-            let JsonString = JSON.stringify(product,null,2);
-            // SE MUESTRA STRING EN EL <textarea>
-            $('#description').val(JsonString);
+            $('#marca').val(product.marca);
+            $('#modelo').val(product.modelo);
+            $('#precio').val(product.precio);
+            $('#detalles').val(product.detalles);
+            $('#unidades').val(product.unidades);
+            $('#imagen').val(product.imagen);
             
             // SE PONE LA BANDERA DE EDICIÓN EN true
             edit = true;
         });
         e.preventDefault();
     });    
+
+
+    // Función para validar el formulario completo
+    function validarFormulario(data) {
+        return validarNombre(data.nombre) &&
+            validarModelo(data.modelo) &&
+            validarPrecio(data.precio) &&
+            validarDetalles(data.detalles) &&
+            validarUnidades(data.unidades);
+    }
+
+    // Funciones de validación individuales con mensajes en tiempo real
+
+    $('#name').focusout(() => validarNombre($('#name').val()));
+    $('#modelo').focusout(() => validarModelo($('#modelo').val()));
+    $('#precio').focusout(() => validarPrecio($('#precio').val()));
+    $('#detalles').focusout(() => validarDetalles($('#detalles').val()));
+    $('#unidades').focusout(() => validarUnidades($('#unidades').val()));
+
+    function mostrarEstado(campo, mensaje, esValido) {
+        const estado = $(`#estado-${campo}`);
+        estado.text(mensaje);
+        estado.css('color', esValido ? 'green' : 'red');
+        estado.show();
+    }
+
+    function validarNombre(nombre) {
+        if (nombre === "" || nombre.length > 100) {
+            mostrarEstado('nombre', "El nombre es requerido y debe tener 100 caracteres o menos.", false);
+            return false;
+        }
+        mostrarEstado('nombre', "Nombre válido", true);
+        return true;
+    }
+
+    function validarModelo(modelo) {
+        if (!/^[a-zA-Z0-9]+$/.test(modelo) || modelo.length > 25) {
+            mostrarEstado('modelo', "El modelo es requerido, alfanumérico y de máximo 25 caracteres.", false);
+            return false;
+        }
+        mostrarEstado('modelo', "Modelo válido", true);
+        return true;
+    }
+
+    function validarPrecio(precio) {
+        if (isNaN(precio) || precio <= 99.99) {
+            mostrarEstado('precio', "El precio debe ser mayor a 99.99.", false);
+            return false;
+        }
+        mostrarEstado('precio', "Precio válido", true);
+        return true;
+    }
+
+    function validarDetalles(detalles) {
+        if (detalles.length > 250) {
+            mostrarEstado('detalles', "Los detalles no deben exceder 250 caracteres.", false);
+            return false;
+        }
+        mostrarEstado('detalles', "Detalles válidos", true);
+        return true;
+    }
+
+    function validarUnidades(unidades) {
+        if (isNaN(unidades) || unidades < 0) {
+            mostrarEstado('unidades', "Las unidades deben ser mayores o iguales a 0.", false);
+            return false;
+        }
+        mostrarEstado('unidades', "Unidades válidas", true);
+        return true;
+    }
+
+
 });
