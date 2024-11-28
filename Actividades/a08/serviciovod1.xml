@@ -5,6 +5,10 @@
                 <usuario>Josue Machorro</usuario>
                 <idioma>English</idioma>
             </perfil>
+            <perfil>
+                <usuario>Joctan Maceda</usuario>
+                <idioma>Español</idioma>
+            </perfil>
         </perfiles>
     </cuenta>
     <contenido>
@@ -13,11 +17,19 @@
                 <nombre>Terror</nombre>
                 <titulo>
                     Espejos Siniestros
-                    <duracion>01:54:26</duracion>
+                    <duracion>01:54:06</duracion>
                 </titulo>
                 <titulo>
                     El Conjuro
                     <duracion>02:54:26</duracion>
+                </titulo>
+                <titulo>
+                    El Titere
+                    <duracion>02:13:46</duracion>
+                </titulo>
+                <titulo>
+                    Glass
+                    <duracion>02:01:27</duracion>
                 </titulo>
             </genero>
             <genero>
@@ -29,30 +41,54 @@
                 <titulo>
                     Star Wars
                     <duracion>02:13:26</duracion>
+                </titulo>
+                <titulo>
+                    Blade Runner
+                    <duracion>01:57:45</duracion>
+                </titulo>
+                <titulo>
+                    Interstellar
+                    <duracion>02:49:04</duracion>
                 </titulo>
             </genero>
         </peliculas>
         <programas>
             <genero>
-                <nombre>Terror</nombre>
+                <nombre>Documental</nombre>
                 <titulo>
-                    Espejos Siniestros
-                    <duracion>01:54:26</duracion>
+                    Planeta Tierra
+                    <duracion>00:50:15</duracion>
                 </titulo>
                 <titulo>
-                    El Conjuro
-                    <duracion>02:54:26</duracion>
+                    La Historia del Universo
+                    <duracion>01:02:10</duracion>
+                </titulo>
+                <titulo>
+                    Viaje al Centro de la Tierra
+                    <duracion>00:45:20</duracion>
+                </titulo>
+                <titulo>
+                    Los Misterios del Océano
+                    <duracion>00:53:30</duracion>
                 </titulo>
             </genero>
             <genero>
-                <nombre>Ciencia Ficcion</nombre>
+                <nombre>Comedia</nombre>
                 <titulo>
-                    Dune
-                    <duracion>01:56:26</duracion>
+                    La Oficina
+                    <duracion>00:23:30</duracion>
                 </titulo>
                 <titulo>
-                    Star Wars
-                    <duracion>02:13:26</duracion>
+                    Amigos
+                    <duracion>00:22:30</duracion>
+                </titulo>
+                <titulo>
+                    Cómo Conocí a tu Madre
+                    <duracion>00:24:00</duracion>
+                </titulo>
+                <titulo>
+                    Brooklyn 99
+                    <duracion>00:21:40</duracion>
                 </titulo>
             </genero>
         </programas>

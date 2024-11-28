@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- Tipo complejo para el elemento Cuenta -->
+    <xs:complexType name="cuentaType">
+        <xs:sequence>
+            <!-- Elementos Nombre, Correo y Teléfono -->
+            <xs:element name="Nombre" type="xs:string"/>
+            <xs:element name="Correo" type="xs:string"/>
+            <xs:element name="Telefono" minOccurs="0">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="tipo" type="xs:string" use="required"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <!-- Atributos del elemento Cuenta -->
+        <xs:attribute name="id" type="xs:integer" use="required"/>
+        <xs:attribute name="plan" type="xs:string" use="required"/>
+        <xs:attribute name="fechaIni" type="xs:date" use="optional"/>
+        <xs:attribute name="fechaFin" type="xs:date" use="optional"/>
+    </xs:complexType>
+    
+    <!-- Tipo complejo para el elemento Spotify -->
+    <xs:complexType name="spotifyType">
+        <xs:sequence>
+            <!-- Elemento Cuenta (1 o más veces) -->
+            <xs:element name="Cuenta" type="cuentaType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <!-- Atributo del elemento Spotify -->
+        <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+    
+    <!-- Elementos principales del esquema -->
+    <xs:element name="Spotify" type="spotifyType"/>
+    
+</xs:schema>

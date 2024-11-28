@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="001" visitas="20" puntos="200">
+        <nombre>Aaron Maceda</nombre>
+        <correo>aaronmaceda@gmail.com</correo>
+        <telefono tipo="movil">7713396390</telefono>
+    </tarjeta>
+    <tarjeta noserie="002" visitas="30" puntos="300">
+        <nombre>Joctan Maceda</nombre>
+        <correo>joctanmaceda@gmail.com</correo>
+        <telefono tipo="movil">7713840323</telefono>
+        <telefono tipo="movil">7712457896</telefono>
+    </tarjeta>
+</cinefanatico>

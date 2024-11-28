@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tw:SpotifyCatalog xmlns:tw="http://tecnologiasweb.com.mx"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://tecnologiasweb.com.mx Untitled.xsd">
+    <tw:account email="user@example.com">
+        <tw:profiles>
+            <tw:profile username="John Doe" language="English"/>
+            <tw:profile username="Jane Smith" language="Spanish"/>
+        </tw:profiles>
+    </tw:account>
+    <tw:content>
+        <tw:songs>
+            <tw:genre name="Pop">
+                <tw:title duration="03:30">Blinding Lights</tw:title>
+                <tw:title duration="04:10">Levitating</tw:title>
+            </tw:genre>
+            <tw:genre name="Rock">
+                <tw:title duration="05:00">Bohemian Rhapsody</tw:title>
+                <tw:title duration="06:00">Hotel California</tw:title>
+            </tw:genre>
+        </tw:songs>
+        <tw:podcasts>
+            <tw:genre name="Technology">
+                <tw:title duration="01:00:00">Tech Talks</tw:title>
+                <tw:title duration="01:20:00">AI Revolution</tw:title>
+            </tw:genre>
+            <tw:genre name="Health">
+                <tw:title duration="00:45:00">Wellness 101</tw:title>
+                <tw:title duration="00:50:00">Mental Health Matters</tw:title>
+            </tw:genre>
+        </tw:podcasts>
+    </tw:content>
+</tw:SpotifyCatalog>
+

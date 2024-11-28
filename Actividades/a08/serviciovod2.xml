@@ -1,0 +1,38 @@
+<catalogovod>
+    <cuenta correo="josue.machorro@example.com">
+        <perfiles>
+            <perfil usuario="Josue Machorro" idioma="English"/>
+            <perfil usuario="Joctan Maceda" idioma="Español"/>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Terror">
+                <titulo nombre="Espejos Siniestros" duracion="01:54:06"/>
+                <titulo nombre="El Conjuro" duracion="02:54:26"/>
+                <titulo nombre="El Titere" duracion="02:13:46"/>
+                <titulo nombre="Glass" duracion="02:01:27"/>
+            </genero>
+            <genero nombre="Ciencia Ficcion">
+                <titulo nombre="Dune" duracion="01:56:26"/>
+                <titulo nombre="Star Wars" duracion="02:13:26"/>
+                <titulo nombre="Blade Runner" duracion="01:57:45"/>
+                <titulo nombre="Interstellar" duracion="02:49:04"/>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Documental">
+                <titulo nombre="Planeta Tierra" duracion="00:50:15"/>
+                <titulo nombre="La Historia del Universo" duracion="01:02:10"/>
+                <titulo nombre="Viaje al Centro de la Tierra" duracion="00:45:20"/>
+                <titulo nombre="Los Misterios del Océano" duracion="00:53:30"/>
+            </genero>
+            <genero nombre="Comedia">
+                <titulo nombre="La Oficina" duracion="00:23:30"/>
+                <titulo nombre="Amigos" duracion="00:22:30"/>
+                <titulo nombre="Cómo Conocí a tu Madre" duracion="00:24:00"/>
+                <titulo nombre="Brooklyn 99" duracion="00:21:40"/>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
